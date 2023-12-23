@@ -11,6 +11,7 @@ import org.junit.runner.RunWith;
         tags = "@regression",  // this command will run only smoke scenario not any other scenario.
         //tags = "@smoke or @regression"   you can use more then two tags to run scenario.
         plugin = {"pretty","html:target/cucumber.html"}
+
 )
 public class regressionRunner {
 }

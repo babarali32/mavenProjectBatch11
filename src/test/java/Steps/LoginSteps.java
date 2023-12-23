@@ -9,11 +9,11 @@ import utils.commonMethods;
 
 public class LoginSteps extends commonMethods {
     @Given("user navigated to hrms website")
-    public void user_navigated_to_hrms_website() {
+    public void user_navigated_to_hrms_website() {  // i am login
         openBrowser();
     }
     @When("user enters password and username")
-    public void user_enters_password_and_username() {
+    public void user_enters_password_and_username() { //i am here
        WebElement username= driver.findElement(By.id("txtUsername"));
        username.sendKeys("Admin");
        WebElement pas=driver.findElement(By.xpath("//input[@id='txtPassword']"));
@@ -29,6 +29,10 @@ public class LoginSteps extends commonMethods {
     public void user_logged_in_as_admin() {
 
         System.out.println("test is passed");
+    }
+    @When("Ess user enters password and username")
+    public void ess_user_enters_password_and_username() {
+        System.out.println("hello");
     }
     @Then("user close the browser")
     public void user_close_the_browser() {

@@ -14,8 +14,5 @@ import org.junit.runner.RunWith;
         //tags = "@smoke or @regression"   you can use more then two tags to run scenario.
         plugin = {"pretty","html:target/cucumber.html"}
 )
-
-
-public class RunnerClass {
-
+public class smokeRunner {
 }

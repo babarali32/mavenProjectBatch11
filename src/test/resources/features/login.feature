@@ -12,3 +12,13 @@ Feature: login feature
       When  Ess user enters password and username
       And user click on login button
       Then user logged in as admin
+    @negativeLogin
+    Scenario Outline: negative login test
+      # this scenario is for negative testing
+  When user enteres different "<username>" and "<password>" and veryfiy the "<errormsge>" for all combination
+      Examples:
+      |username|password|errormsge|
+      |Admin    |wrongpass   |Invalid credentials        |
+      |wronguser|Hum@nhrm123 |Invalid credentials        |
+      |         | Hum@nhrm123|Username cannot be empty   |
+      |Admin    |            |Password cannot be empty   |

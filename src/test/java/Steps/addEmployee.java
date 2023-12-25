@@ -54,9 +54,9 @@ public class addEmployee extends commonMethods {
     @When("user enters direct data {string} and middle {string} and {string} last name")
     public void user_enters_direct_data_and_middle_and_last_name(String firstName, String middleName, String lastName) {
         WebElement firstname1=driver.findElement(By.id("firstName"));
-        firstname1.sendKeys(firstName);
+        firstname1.sendKeys(firstName);// this will take first name from feature file as rana
         WebElement midlename2=driver.findElement(By.id("middleName"));
-        midlename2.sendKeys(middleName);
+        midlename2.sendKeys(middleName);// this will take 2nd value as middle name babar from featrue file
         WebElement lastname3=driver.findElement(By.id("lastName"));
         lastname3.sendKeys(lastName);
     }

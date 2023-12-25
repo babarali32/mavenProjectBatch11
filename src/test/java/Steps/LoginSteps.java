@@ -36,22 +36,41 @@ public class LoginSteps extends commonMethods {
     public void ess_user_enters_password_and_username() {
         System.out.println("hello");
     }
-    @When("user enteres different {string} and {string} and veryfiy the {string} for all combination")
-    public void user_enteres_different_and_and_veryfiy_the_for_all_combination(String usernam, String password, String errormsge) {
-        WebElement username1= driver.findElement(By.id("txtUsername"));
-        username1.sendKeys(usernam);
-        WebElement pas1=driver.findElement(By.xpath("//input[@id='txtPassword']"));
-        pas1.sendKeys(password);
-        WebElement login=driver.findElement(By.id("btnLogin"));
-        login.click();
-        WebElement erormsge=driver.findElement(By.id("spanMessage"));
-        String actualerror=erormsge.getText();
-        Assert.assertEquals("values do not match",errormsge,actualerror);
-    }
+
     @Then("user close the browser")
     public void user_close_the_browser() {
        tearDown();
     }
 
+    @When("user enter es different {string} and {string} and veryfiy the {string} for all combination")
+    public void userEnterEsDifferentAndAndVeryfiyTheForAllCombination(String username, String password, String errormsge) {
+
+            WebElement username1= driver.findElement(By.id("txtUsername"));
+            username1.sendKeys(username);
+            WebElement pas1=driver.findElement(By.xpath("//input[@id='txtPassword']"));
+            pas1.sendKeys(password);
+            WebElement login=driver.findElement(By.id("btnLogin"));
+            login.click();
+            WebElement actualdisplay=driver.findElement(By.id("spanMessage"));
+            String actualerorstore=actualdisplay.getText();
+            Assert.assertEquals("values do not match",errormsge,actualerorstore);
+        }
+
+    @When("user enter es different {string} and {string}")
+    public void userEnterEsDifferentAnd(String username, String password) {
+        WebElement username1= driver.findElement(By.id("txtUsername"));
+        username1.sendKeys(username);
+        WebElement pas1=driver.findElement(By.xpath("//input[@id='txtPassword']"));
+        pas1.sendKeys(password);
+    }
+    @Then("user logged in as {string}")
+    public void userLoggedInAs(String admin) {
+        WebElement dash=driver.findElement(By.xpath("//b[text()='Dashboard']"));
+        dash.click();
+        WebElement wlcome=driver.findElement(By.id("welcome"));
+        Assert.assertTrue("not displayerd",wlcome.isDisplayed());
+
+    }
 }
+
 

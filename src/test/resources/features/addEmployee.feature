@@ -1,24 +1,19 @@
 Feature: add an employe on hrms
-
-  Scenario: add employee in feature file
+  Background:
     Given user navigated to hrms website
     When user enters password and username
     And user click on login button
     Then user logged in as admin
     When user clicks on PIM button
     And user clicks on ADD employee button
+
+  Scenario: add employee in feature file
     And user add first name and last name
     And user clicks on save button
     Then employee added successfully
     Then user close the browser
     @addEmployee
     Scenario Outline:
-      Given user navigated to hrms website
-      When user enters password and username
-      And user click on login button
-      Then user logged in as admin
-      When user clicks on PIM button
-      And user clicks on ADD employee button
       And user add "<firstName>" and middle "<middleName>" and "<lastName>" last name
       And user clicks on save button
       Then employee added successfully
@@ -31,13 +26,15 @@ Feature: add an employe on hrms
       # 3rd method when you do not want to use scenario outline and scenario hard code data
     @babar
     Scenario:
-      Given user navigated to hrms website
-      When user enters password and username
-      And user click on login button
-      Then user logged in as admin
-      When user clicks on PIM button
-      And user clicks on ADD employee button
       And user enters direct data "rana" and middle "babar" and "ali" last name
       And user clicks on save button
       Then employee added successfully
       Then user close the browser
+
+      @tableData
+      Scenario: add employee
+     When user add multiple employees and verigy they added
+       |firstName|  middleName | lastName  |
+       |   wash10  |    dry40     |     press70   |
+       |   clean20   |   tie50       |     wear80   |
+       |  bat30  |     ball60     |    ground90    |

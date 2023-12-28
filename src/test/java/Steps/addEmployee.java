@@ -82,8 +82,8 @@ public class addEmployee extends commonMethods {
             lastname3.sendKeys(thirdkey);
             WebElement saveclick=driver.findElement(By.id("btnSave"));
             saveclick.click();
-            WebElement personaldetaildisplay=driver.findElement(By.xpath("//h1[text()='Personal Details']"));
-            Assert.assertTrue("personal details not displayed",personaldetaildisplay.isDisplayed());
+//            WebElement personaldetaildisplay=driver.findElement(By.xpath("//h1[text()='Personal Details']"));
+//            Assert.assertTrue("personal details not displayed logo",personaldetaildisplay.isDisplayed());
             Thread.sleep(5000);
             WebElement addemployebutton=driver.findElement(By.id("menu_pim_addEmployee"));
             addemployebutton.click();

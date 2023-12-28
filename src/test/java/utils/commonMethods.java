@@ -30,5 +30,5 @@ public class commonMethods {
         if (driver != null) {
             driver.quit();
         }
-}
+    }
 }

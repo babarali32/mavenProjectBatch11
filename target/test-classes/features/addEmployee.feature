@@ -35,6 +35,6 @@ Feature: add an employe on hrms
       Scenario: add employee
      When user add multiple employees and verigy they added
        |firstName|  middleName | lastName  |
-       |   wash10  |    dry40     |     press70   |
-       |   clean20   |   tie50       |     wear80   |
-       |  bat30  |     ball60     |    ground90    |
+       |  wash10  |    dry40     |     press70  |
+       |  clean20 |   tie50      |     wear80   |
+       |  bat30   |    ball60    |    ground90  |

@@ -12,6 +12,8 @@ public class configReader {
             FileInputStream fileInputStream=new FileInputStream(path);
             pro =new Properties();
             pro.load(fileInputStream);
+            String getvalue=getvalue("username");
+            System.out.println(getvalue);
             fileInputStream.close();
         } catch (FileNotFoundException e) {
             e.printStackTrace();

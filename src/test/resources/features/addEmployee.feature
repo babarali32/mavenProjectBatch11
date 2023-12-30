@@ -33,8 +33,12 @@ Feature: add an employe on hrms
 
       @tableData
       Scenario: add employee
-     When user add multiple employees and verigy they added
-       |firstName|  middleName | lastName  |
+       When user add multiple employees and verigy they added
+       |firstName|  middleName   |  lastName    |
        |  wash10  |    dry40     |     press70  |
        |  clean20 |   tie50      |     wear80   |
        |  bat30   |    ball60    |    ground90  |
+
+       @excel
+       Scenario: add emoloyee data from excel file
+       When user adds multiply employees from the "employeData" sheet and verify the added employees

@@ -27,7 +27,7 @@ public class dashboardSteps extends commonMethods {
         List<String> actualtabs=new ArrayList<>();
 
         for (WebElement elements:allwebtabs
-             ) {
+        ) {
             String allwebtabsstoreed=elements.getText();
             //in below line all website tabs are stored inside a list of string name actual tabs
             actualtabs.add(allwebtabsstoreed);
@@ -35,7 +35,7 @@ public class dashboardSteps extends commonMethods {
         System.out.println(tabsfromfeaturefile);
         System.out.println(actualtabs);
         Assert.assertTrue(tabsfromfeaturefile.equals(actualtabs));
+      }
+
     }
 
-
-}

@@ -7,7 +7,10 @@ import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import utils.commonMethods;
+import utils.constants;
+import utils.excelReading;
 
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
@@ -90,4 +93,47 @@ public class addEmployee extends commonMethods {
             Thread.sleep(5000);
         }
     }
+    @When("user adds multiply employees from the {string} sheet and verify the added employees")
+    public void user_adds_multiply_employees_from_the_sheet_and_verify_the_added_employees(String sheetName) throws InterruptedException {
+       List<Map<String,String>> newEmploye=excelReading.exceldataintolist(constants.CONFIGURATION_FILEPATH,sheetName);
+            Iterator<Map<String,String>> itar=newEmploye.iterator();
+            while (itar.hasNext()){
+               Map<String,String> mapiterator=itar.next();
+
+                WebElement firstname1=driver.findElement(By.id("firstName"));
+                firstname1.sendKeys(mapiterator.get("firstName"));
+                WebElement midlename2=driver.findElement(By.id("middleName"));
+                midlename2.sendKeys(mapiterator.get("middleName"));
+                WebElement lastname3=driver.findElement(By.id("lastName"));
+                lastname3.sendKeys(mapiterator.get("lastName"));
+//                WebElement photo=driver.findElement(By.xpath("//input[@id='photofile']"));
+//                photo.sendKeys(mapiterator.get("photo"));
+                WebElement checkbox=driver.findElement(By.id("chkLogin"));
+                if(!checkbox.isSelected()){
+                    checkbox.click();
+                }
+                WebElement username2=driver.findElement(By.xpath("//input[@id='user_name']"));
+                username2.sendKeys(mapiterator.get("userName"));
+                WebElement paswrd=driver.findElement(By.xpath("//input[@id='user_password']"));
+                WebElement confirmpass=driver.findElement(By.xpath("//input[@id='re_password']"));
+                paswrd.sendKeys(mapiterator.get("password"));
+                confirmpass.sendKeys(mapiterator.get("password"));
+                WebElement saveclick=driver.findElement(By.id("btnSave"));
+
+                saveclick.click();
+                Thread.sleep(4000);
+                WebElement addemployebutton=driver.findElement(By.id("menu_pim_addEmployee"));
+                addemployebutton.click();
+                Thread.sleep(4000);
+
+
+
+
+
+
+
+            }
+
+    }
+
 }

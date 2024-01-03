@@ -1,11 +1,12 @@
 package utils;
 
+import Steps.pageInitializer;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
-public class commonMethods {
+public class commonMethods extends pageInitializer {
             public static WebDriver driver;
             public void openBrowser(){
                 configReader.read(constants.CONFIGURATION_PATH);
@@ -25,6 +26,7 @@ public class commonMethods {
                 }
                     driver.get(configReader.getvalue("url"));
                     driver.manage().window().maximize();
+                    initializerpageobjects();
                 }
          public void tearDown() {
         if (driver != null) {

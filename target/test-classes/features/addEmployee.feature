@@ -41,4 +41,4 @@ Feature: add an employe on hrms
 
        @excel
        Scenario: add emoloyee data from excel file
-       When user adds multiply employees from the "employeData" sheet and verify the added employees
+       When user adds multiply employees from the "list" sheet and verify the added employees

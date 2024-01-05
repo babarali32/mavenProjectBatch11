@@ -6,11 +6,11 @@ import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-        features = "src/test/resources/features/login.feature",
+        features = "src/test/resources/features/employeSearch.feature",
         glue = "Steps",// this command is used to make link wiht feature file
-        dryRun = true, // this keyword checks the unimplmented steps
+        dryRun = false, // this keyword checks the unimplmented steps
         monochrome = true, //this removes the extra lines from code
-        tags = "@negativeLogin",  // this command will run only smoke scenario not any other scenario.
+        tags = "@justonelinecode",  // this command will run only smoke scenario not any other scenario.
         //tags = "@smoke or @regression"   you can use more then two tags to run scenario.
         plugin = {"pretty","html:target/cucumber.html"}
 )

@@ -24,9 +24,9 @@ Feature: add an employe on hrms
       |   two   |   456       |     def   |
       |  three  |     789     |    xyz    |
       # 3rd method when you do not want to use scenario outline and scenario hard code data
-    @babar
+    @javascriptclick
     Scenario:
-      And user enters direct data "rana" and middle "babar" and "ali" last name
+      And user enters direct data "pakistan" and middle "lahore" and "kasur" last name
       And user clicks on save button
       Then employee added successfully
       Then user close the browser

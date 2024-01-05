@@ -12,5 +12,7 @@ import java.util.List;
 public class constants {
     public static final String CONFIGURATION_PATH=System.getProperty("user.dir")+"/src/test/resources/config/config.properties";
     public static final String CONFIGURATION_FILEPATH=System.getProperty("user.dir")+"/src/test/resources/testData/employedata.xlsx";
+    public static final int IMPLICIT_WAIT=5;
+    public static final int EXPLICIT_WAIT=10;
 
 }

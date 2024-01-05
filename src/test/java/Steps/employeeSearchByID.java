@@ -19,16 +19,18 @@ public class employeeSearchByID extends commonMethods {
     }
     @When("user enters valid employe id")
     public void user_enters_valid_employe_id() {
-        //employeeListPage listemp=new employeeListPage();
-        employlist.idonListpage.sendKeys("578463453");
+        employeeListPage listemp=new employeeListPage();
+       // employlist.idonListpage.sendKeys("578463453");
+        sendText(listemp.idonListpage,"578463453");
 //
 //        WebElement id=driver.findElement(By.id("empsearch_id"));
 //        id.sendKeys("578463453");
     }
     @When("click on search button")
     public void click_on_search_button() {
-      //  employeeListPage listemp=new employeeListPage();
+       employeeListPage listemp=new employeeListPage();
         employlist.searchbutton.click();
+        click(listemp.searchbutton);
 //
 //        WebElement searchbutton=driver.findElement(By.id("searchBtn"));
 //        searchbutton.click();
@@ -40,8 +42,9 @@ public class employeeSearchByID extends commonMethods {
 
     @When("user enters valid employe name")
     public void user_enters_valid_employe_name() {
-        //employeeListPage listemp=new employeeListPage();
-        employlist.nameEmployelistpage.sendKeys("Azia");
+        employeeListPage listemp=new employeeListPage();
+        //employlist.nameEmployelistpage.sendKeys("Azia");
+        sendText(listemp.nameEmployelistpage,"Azia");
 //
 //       WebElement name=driver.findElement(By.id("empsearch_employee_name_empName"));
 //       name.sendKeys("Azia");

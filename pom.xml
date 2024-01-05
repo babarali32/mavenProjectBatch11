@@ -90,8 +90,8 @@
       <version>4.13.2</version>
       <scope>test</scope>
     </dependency>
-
   </dependencies>
+
   <build>
     <plugins>
       <plugin>
@@ -103,7 +103,44 @@
           <target>16</target>
         </configuration>
       </plugin>
+      <!-- Added Surefire Plugin configuration -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <version>3.0.0-M5</version>
+        <configuration>
+          <includes>
+            <include>**/*regressionRunner.java</include>
+          </includes>
+          <testFailureIgnore>true</testFailureIgnore>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>net.masterthought</groupId>
+        <artifactId>maven-cucumber-reporting</artifactId>
+        <version>5.7.7</version>
+        <executions>
+          <execution>
+            <id>execution</id>
+            <phase>test</phase>
+            <goals>
+              <goal>generate</goal>
+            </goals>
+            <configuration>
+              <projectName>babarMaven</projectName>
+              <!-- output directory for the generated report -->
+              <outputDirectory>${project.build.directory}</outputDirectory>
+              <!-- optional, defaults to outputDirectory if not specified -->
+              <inputDirectory>${project.build.directory}</inputDirectory>
+              <jsonFiles>
+                <!-- supports wildcard or name pattern -->
+                <param>**/*.json</param>
+              </jsonFiles>
+              <!-- optional, defaults to outputDirectory if not specified -->
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
     </plugins>
   </build>
-
 </project>

@@ -1,4 +1,4 @@
-# Created at 2024-01-06T00:08:07.150
+# Created at 2024-01-06T16:26:41.754
 Boot Manifest-JAR contains absolute paths in classpath 'G:\6 Cucumber\mavenProject19-12-2023\babarMaven\target\test-classes'
 Hint: <argLine>-Djdk.net.URLClassPath.disableClassPathURLCheck=true</argLine>
 

@@ -110,7 +110,7 @@
         <version>3.0.0-M5</version>
         <configuration>
           <includes>
-            <include>**/*regressionRunner.java</include>
+            <include>**/*smokeRunner.java</include>
           </includes>
           <testFailureIgnore>true</testFailureIgnore>
         </configuration>

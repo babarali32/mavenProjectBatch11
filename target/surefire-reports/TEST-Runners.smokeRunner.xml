@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="Runners.regressionRunner" time="76.675" tests="1" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="Runners.smokeRunner" time="142.427" tests="1" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="20"/>
     <property name="sun.cpu.isalist" value="amd64"/>
@@ -15,7 +15,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="US"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk-20\bin"/>
-    <property name="sun.java.command" value="C:\Users\FM SIFT\AppData\Local\Temp\surefire11849956039426230670\surefirebooter7741935172796991153.jar C:\Users\FM SIFT\AppData\Local\Temp\surefire11849956039426230670 2024-01-06T00-08-05_717-jvmRun1 surefire6201717255673038928tmp surefire_016669744470174945567tmp"/>
+    <property name="sun.java.command" value="C:\Users\FM SIFT\AppData\Local\Temp\surefire14315550612688527183\surefirebooter105937839947077077.jar C:\Users\FM SIFT\AppData\Local\Temp\surefire14315550612688527183 2024-01-06T16-29-10_098-jvmRun1 surefire10352936929547794985tmp surefire_01278473776062296452tmp"/>
     <property name="jdk.debug" value="release"/>
     <property name="surefire.test.class.path" value="G:\6 Cucumber\mavenProject19-12-2023\babarMaven\target\test-classes;G:\6 Cucumber\mavenProject19-12-2023\babarMaven\target\classes;C:\Users\FM SIFT\.m2\repository\org\seleniumhq\selenium\selenium-java\3.8.1\selenium-java-3.8.1.jar;C:\Users\FM SIFT\.m2\repository\org\seleniumhq\selenium\selenium-api\3.8.1\selenium-api-3.8.1.jar;C:\Users\FM SIFT\.m2\repository\org\seleniumhq\selenium\selenium-chrome-driver\3.8.1\selenium-chrome-driver-3.8.1.jar;C:\Users\FM SIFT\.m2\repository\org\seleniumhq\selenium\selenium-edge-driver\3.8.1\selenium-edge-driver-3.8.1.jar;C:\Users\FM SIFT\.m2\repository\org\seleniumhq\selenium\selenium-firefox-driver\3.8.1\selenium-firefox-driver-3.8.1.jar;C:\Users\FM SIFT\.m2\repository\org\seleniumhq\selenium\selenium-ie-driver\3.8.1\selenium-ie-driver-3.8.1.jar;C:\Users\FM SIFT\.m2\repository\org\seleniumhq\selenium\selenium-opera-driver\3.8.1\selenium-opera-driver-3.8.1.jar;C:\Users\FM SIFT\.m2\repository\org\seleniumhq\selenium\selenium-remote-driver\3.8.1\selenium-remote-driver-3.8.1.jar;C:\Users\FM SIFT\.m2\repository\org\seleniumhq\selenium\selenium-safari-driver\3.8.1\selenium-safari-driver-3.8.1.jar;C:\Users\FM SIFT\.m2\repository\org\seleniumhq\selenium\selenium-support\3.8.1\selenium-support-3.8.1.jar;C:\Users\FM SIFT\.m2\repository\net\bytebuddy\byte-buddy\1.7.5\byte-buddy-1.7.5.jar;C:\Users\FM SIFT\.m2\repository\org\apache\commons\commons-exec\1.3\commons-exec-1.3.jar;C:\Users\FM SIFT\.m2\repository\commons-codec\commons-codec\1.10\commons-codec-1.10.jar;C:\Users\FM SIFT\.m2\repository\commons-logging\commons-logging\1.2\commons-logging-1.2.jar;C:\Users\FM SIFT\.m2\repository\com\google\code\gson\gson\2.8.2\gson-2.8.2.jar;C:\Users\FM SIFT\.m2\repository\com\google\guava\guava\23.0\guava-23.0.jar;C:\Users\FM SIFT\.m2\repository\com\google\code\findbugs\jsr305\1.3.9\jsr305-1.3.9.jar;C:\Users\FM SIFT\.m2\repository\com\google\errorprone\error_prone_annotations\2.0.18\error_prone_annotations-2.0.18.jar;C:\Users\FM SIFT\.m2\repository\com\google\j2objc\j2objc-annotations\1.1\j2objc-annotations-1.1.jar;C:\Users\FM SIFT\.m2\repository\org\codehaus\mojo\animal-sniffer-annotations\1.14\animal-sniffer-annotations-1.14.jar;C:\Users\FM SIFT\.m2\repository\org\apache\httpcomponents\httpclient\4.5.3\httpclient-4.5.3.jar;C:\Users\FM SIFT\.m2\repository\org\apache\httpcomponents\httpcore\4.4.6\httpcore-4.4.6.jar;C:\Users\FM SIFT\.m2\repository\io\cucumber\cucumber-java\7.14.0\cucumber-java-7.14.0.jar;C:\Users\FM SIFT\.m2\repository\io\cucumber\cucumber-core\7.14.0\cucumber-core-7.14.0.jar;C:\Users\FM SIFT\.m2\repository\io\cucumber\cucumber-gherkin\7.14.0\cucumber-gherkin-7.14.0.jar;C:\Users\FM SIFT\.m2\repository\io\cucumber\cucumber-gherkin-messages\7.14.0\cucumber-gherkin-messages-7.14.0.jar;C:\Users\FM SIFT\.m2\repository\io\cucumber\gherkin\26.2.0\gherkin-26.2.0.jar;C:\Users\FM SIFT\.m2\repository\io\cucumber\messages\22.0.0\messages-22.0.0.jar;C:\Users\FM SIFT\.m2\repository\io\cucumber\tag-expressions\5.0.6\tag-expressions-5.0.6.jar;C:\Users\FM SIFT\.m2\repository\io\cucumber\cucumber-expressions\16.1.2\cucumber-expressions-16.1.2.jar;C:\Users\FM SIFT\.m2\repository\io\cucumber\cucumber-plugin\7.14.0\cucumber-plugin-7.14.0.jar;C:\Users\FM SIFT\.m2\repository\io\cucumber\docstring\7.14.0\docstring-7.14.0.jar;C:\Users\FM SIFT\.m2\repository\io\cucumber\html-formatter\20.4.0\html-formatter-20.4.0.jar;C:\Users\FM SIFT\.m2\repository\io\cucumber\junit-xml-formatter\0.2.0\junit-xml-formatter-0.2.0.jar;C:\Users\FM SIFT\.m2\repository\io\cucumber\ci-environment\9.2.0\ci-environment-9.2.0.jar;C:\Users\FM SIFT\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\FM SIFT\.m2\repository\io\cucumber\cucumber-junit\7.14.0\cucumber-junit-7.14.0.jar;C:\Users\FM SIFT\.m2\repository\org\apache\poi\poi-ooxml\4.1.2\poi-ooxml-4.1.2.jar;C:\Users\FM SIFT\.m2\repository\org\apache\poi\poi-ooxml-schemas\4.1.2\poi-ooxml-schemas-4.1.2.jar;C:\Users\FM SIFT\.m2\repository\org\apache\xmlbeans\xmlbeans\3.1.0\xmlbeans-3.1.0.jar;C:\Users\FM SIFT\.m2\repository\org\apache\commons\commons-compress\1.19\commons-compress-1.19.jar;C:\Users\FM SIFT\.m2\repository\com\github\virtuald\curvesapi\1.06\curvesapi-1.06.jar;C:\Users\FM SIFT\.m2\repository\org\apache\poi\poi\4.1.2\poi-4.1.2.jar;C:\Users\FM SIFT\.m2\repository\org\apache\commons\commons-collections4\4.4\commons-collections4-4.4.jar;C:\Users\FM SIFT\.m2\repository\org\apache\commons\commons-math3\3.6.1\commons-math3-3.6.1.jar;C:\Users\FM SIFT\.m2\repository\com\zaxxer\SparseBitSet\1.2\SparseBitSet-1.2.jar;C:\Users\FM SIFT\.m2\repository\commons-io\commons-io\2.11.0\commons-io-2.11.0.jar;C:\Users\FM SIFT\.m2\repository\io\github\bonigarcia\webdrivermanager\5.6.2\webdrivermanager-5.6.2.jar;C:\Users\FM SIFT\.m2\repository\org\slf4j\slf4j-api\2.0.9\slf4j-api-2.0.9.jar;C:\Users\FM SIFT\.m2\repository\com\github\docker-java\docker-java\3.3.4\docker-java-3.3.4.jar;C:\Users\FM SIFT\.m2\repository\com\github\docker-java\docker-java-core\3.3.4\docker-java-core-3.3.4.jar;C:\Users\FM SIFT\.m2\repository\com\github\docker-java\docker-java-api\3.3.4\docker-java-api-3.3.4.jar;C:\Users\FM SIFT\.m2\repository\com\fasterxml\jackson\core\jackson-annotations\2.10.3\jackson-annotations-2.10.3.jar;C:\Users\FM SIFT\.m2\repository\com\fasterxml\jackson\core\jackson-databind\2.10.3\jackson-databind-2.10.3.jar;C:\Users\FM SIFT\.m2\repository\com\fasterxml\jackson\core\jackson-core\2.10.3\jackson-core-2.10.3.jar;C:\Users\FM SIFT\.m2\repository\org\bouncycastle\bcpkix-jdk18on\1.76\bcpkix-jdk18on-1.76.jar;C:\Users\FM SIFT\.m2\repository\org\bouncycastle\bcprov-jdk18on\1.76\bcprov-jdk18on-1.76.jar;C:\Users\FM SIFT\.m2\repository\org\bouncycastle\bcutil-jdk18on\1.76\bcutil-jdk18on-1.76.jar;C:\Users\FM SIFT\.m2\repository\org\slf4j\jcl-over-slf4j\1.7.30\jcl-over-slf4j-1.7.30.jar;C:\Users\FM SIFT\.m2\repository\com\github\docker-java\docker-java-transport-httpclient5\3.3.4\docker-java-transport-httpclient5-3.3.4.jar;C:\Users\FM SIFT\.m2\repository\com\github\docker-java\docker-java-transport\3.3.4\docker-java-transport-3.3.4.jar;C:\Users\FM SIFT\.m2\repository\net\java\dev\jna\jna\5.13.0\jna-5.13.0.jar;C:\Users\FM SIFT\.m2\repository\org\brotli\dec\0.1.2\dec-0.1.2.jar;C:\Users\FM SIFT\.m2\repository\org\apache\commons\commons-lang3\3.13.0\commons-lang3-3.13.0.jar;C:\Users\FM SIFT\.m2\repository\org\apache\httpcomponents\client5\httpclient5\5.2.1\httpclient5-5.2.1.jar;C:\Users\FM SIFT\.m2\repository\org\apache\httpcomponents\core5\httpcore5\5.2\httpcore5-5.2.jar;C:\Users\FM SIFT\.m2\repository\org\apache\httpcomponents\core5\httpcore5-h2\5.2\httpcore5-h2-5.2.jar;C:\Users\FM SIFT\.m2\repository\io\cucumber\datatable\7.15.0\datatable-7.15.0.jar;C:\Users\FM SIFT\.m2\repository\junit\junit\4.13.2\junit-4.13.2.jar;C:\Users\FM SIFT\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;"/>
     <property name="sun.cpu.endian" value="little"/>
@@ -30,7 +30,7 @@
     <property name="line.separator" value="&#10;"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
-    <property name="surefire.real.class.path" value="C:\Users\FM SIFT\AppData\Local\Temp\surefire11849956039426230670\surefirebooter7741935172796991153.jar"/>
+    <property name="surefire.real.class.path" value="C:\Users\FM SIFT\AppData\Local\Temp\surefire14315550612688527183\surefirebooter105937839947077077.jar"/>
     <property name="user.script" value=""/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="20.0.2+9-78"/>
@@ -59,39 +59,26 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="64.0"/>
   </properties>
-  <testcase name=" #4" classname="add an employe on hrms" time="74.263">
+  <testcase name="login with valid credentials" classname="login feature" time="140.413">
     <system-out><![CDATA[
-@javascriptclick
-Scenario:                                                                          # src/test/resources/features/addEmployee.feature:28
+@takescreenshot
+Scenario Outline: login with valid credentials           # src/test/resources/features/login.feature:11
 Admin
-Admin
-  Given user navigated to hrms website                                             # Steps.LoginSteps.user_navigated_to_hrms_website()
-  When user enters password and username                                           # Steps.LoginSteps.user_enters_password_and_username()
-  And user click on login button                                                   # Steps.LoginSteps.user_click_on_login_button()
-successfully logged in
-  Then user logged in as admin                                                     # Steps.LoginSteps.user_logged_in_as_admin()
-  When user clicks on PIM button                                                   # Steps.addEmployee.user_clicks_on_pim_button()
-  And user clicks on ADD employee button                                           # Steps.addEmployee.user_clicks_on_add_employee_button()
-  And user enters direct data "pakistan" and middle "lahore" and "kasur" last name # Steps.addEmployee.user_enters_direct_data_and_middle_and_last_name(java.lang.String,java.lang.String,java.lang.String)
-  And user clicks on save button                                                   # Steps.addEmployee.user_clicks_on_save_button()
-employee has been added successfully
-  Then employee added successfully                                                 # Steps.addEmployee.employee_added_successfully()
-  Then user close the browser                                                      # Steps.LoginSteps.user_close_the_browser()
+  When user enter es different "Admin" and "Hum@nhrm123" # Steps.LoginSteps.userEnterEsDifferentAnd(java.lang.String,java.lang.String)
+  And user click on login button                         # Steps.LoginSteps.user_click_on_login_button()
+  Then user logged in as "Admin"                         # Steps.LoginSteps.userLoggedInAs(java.lang.String)
+
+    Embedding login with valid credentials [image/png 55134 bytes]
+
 ]]></system-out>
     <system-err><![CDATA[SLF4J: No SLF4J providers were found.
 SLF4J: Defaulting to no-operation (NOP) logger implementation
 SLF4J: See https://www.slf4j.org/codes.html#noProviders for further details.
-Starting ChromeDriver 120.0.6099.109 (3419140ab665596f21b385ce136419fde0924272-refs/branch-heads/6099@{#1483}) on port 29052
+Starting ChromeDriver 120.0.6099.109 (3419140ab665596f21b385ce136419fde0924272-refs/branch-heads/6099@{#1483}) on port 22470
 Only local connections are allowed.
 Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
 ChromeDriver was started successfully.
-Jan 06, 2024 12:08:23 AM org.openqa.selenium.remote.ProtocolHandshake createSession
-INFO: Detected dialect: W3C
-Starting ChromeDriver 120.0.6099.109 (3419140ab665596f21b385ce136419fde0924272-refs/branch-heads/6099@{#1483}) on port 15975
-Only local connections are allowed.
-Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
-ChromeDriver was started successfully.
-Jan 06, 2024 12:08:43 AM org.openqa.selenium.remote.ProtocolHandshake createSession
+Jan 06, 2024 4:29:26 PM org.openqa.selenium.remote.ProtocolHandshake createSession
 INFO: Detected dialect: W3C
 ]]></system-err>
   </testcase>

@@ -14,5 +14,6 @@ public class constants {
     public static final String CONFIGURATION_FILEPATH=System.getProperty("user.dir")+"/src/test/resources/testData/employedata.xlsx";
     public static final int IMPLICIT_WAIT=5;
     public static final int EXPLICIT_WAIT=10;
+    public static final String SCREENSHOT_FILEPATH=System.getProperty("user.dir")+"/shreenshots/";
 
 }

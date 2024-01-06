@@ -59,8 +59,14 @@ public class addEmployee extends commonMethods {
     }
     @Then("employee added successfully")
     public void employee_added_successfully() {
-
+        addNewEmployeepage addEmployee=new addNewEmployeepage();
         System.out.println("employee has been added successfully");
+        click(addEmployee.editbutton);
+        selectDropDown(addEmployee.martialStatus,"Other");
+        selectDropDown(addEmployee.nationality,"Pakistani");
+        click(addEmployee.savebutton);
+
+
     }
 
     @When("user add {string} and middle {string} and {string} last name")

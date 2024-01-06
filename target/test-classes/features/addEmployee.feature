@@ -6,7 +6,7 @@ Feature: add an employe on hrms
     Then user logged in as admin
     When user clicks on PIM button
     And user clicks on ADD employee button
-
+  @dropdown
   Scenario: add employee in feature file
     And user add first name and last name
     And user clicks on save button

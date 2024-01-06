@@ -1,16 +1,21 @@
 package utils;
 
 import Steps.pageInitializer;
+import io.cucumber.java.ja.但し;
 import io.github.bonigarcia.wdm.WebDriverManager;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.io.File;
+import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.concurrent.TimeUnit;
 
 public class commonMethods extends pageInitializer {
@@ -62,6 +67,29 @@ public class commonMethods extends pageInitializer {
                 public static void jsClick(WebElement jselement){
                 getJsExecutor().executeScript("arguments[0].click",jselement);
                 }
+                public static void selectDropDown(WebElement dropdownelement, String text){
+                Select select=new Select(dropdownelement);
+                select.selectByVisibleText(text);
+                }
+                public static byte[] takescreenshot(String fileName){
+                    TakesScreenshot screenshot=(TakesScreenshot) driver;
+                    byte [] picbyte=screenshot.getScreenshotAs(OutputType.BYTES);
+                    File sourceFile=screenshot.getScreenshotAs(OutputType.FILE );
+                    try {
+                        FileUtils.copyFile(sourceFile,new File(constants.SCREENSHOT_FILEPATH + fileName+
+                                " "+getTimestamp("yyyy-MM-dd-HH-mm-ss")+".png"));
+                    } catch (IOException e) {
+                        throw new RuntimeException(e);
+                    }
+                    return picbyte;
+                }
+                public static String getTimestamp(String pattren){
+
+                    Date date=new Date();//yyyy-mm-dd-hr-mn-ss-ms
+                    SimpleDateFormat sdf=new SimpleDateFormat(pattren);
+                    return  sdf.format(date);
+                }
+
          public void tearDown() {
         if (driver != null) {
             driver.quit();

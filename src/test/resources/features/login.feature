@@ -1,7 +1,7 @@
 Feature: login feature
   Background:
     # Given user navigated to hrms website  //because this line is common in all feature file so put it into hooks, now dont need this line here because this is common.
-  @outlineTable
+  @takescreenshot
   Scenario Outline: login with valid credentials
     When user enter es different "<username>" and "<password>"
     And user click on login button

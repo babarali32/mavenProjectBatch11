@@ -42,3 +42,12 @@ Feature: add an employe on hrms
        @excel
        Scenario: add emoloyee data from excel file
        When user adds multiply employees from the "list" sheet and verify the added employees
+
+         @DataBase
+         Scenario: Frontend and back end testing
+           When user enters direct data "setevenJ" and middle "olgaJ" and "kingJ" last name
+           And capture the employee ID
+           And user clicks on save button
+           And employee added successfully
+           And query the information from backEnd
+           Then verify the results from backEnd and frontEnd

@@ -12,6 +12,8 @@ import utils.commonMethods;
 import utils.constants;
 import utils.excelReading;
 import pages.employeeListPage;
+import utils.globalVariables;
+
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
@@ -231,5 +233,15 @@ public class addEmployee extends commonMethods {
             Thread.sleep(4000);
         }
     }
+
+    @When("capture the employee ID")
+    public void capture_the_employee_id() {
+        addNewEmployeepage addEmployee = new addNewEmployeepage();
+        globalVariables.id = addEmployee.employeeid.getAttribute("value");
+        globalVariables.firstName = addEmployee.firstname.getAttribute("value");
+        System.out.println("emp id " + globalVariables.id);
+        System.out.println("emp firstNAME " + globalVariables.firstName);
+    }
+
 }
 

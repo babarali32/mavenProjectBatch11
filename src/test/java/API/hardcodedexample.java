@@ -1,5 +1,4 @@
 package API;
-
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
@@ -7,17 +6,15 @@ import org.junit.Assert;
 import org.junit.FixMethodOrder;
 import org.junit.Test;
 import org.junit.runners.MethodSorters;
-
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.*;
-
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class hardcodedexample {
     // this @test is annotation in junit to Run any method ,
     // storing the base uri
     String BaseURI = RestAssured.baseURI = "http://hrm.syntaxtechs.net/syntaxapi/api";
     String token = "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3MDY0MzMwODAsImlzcyI6ImxvY2FsaG9zdCIsImV4cCI6MTcwNjQ3NjI4MCwidXNlcklkIjoiNjM5NSJ9.Of4hqkeLs0FAssVTAFzB6aCgOdiUtRS2HSFGWvNNjfI";
-    String employe_id;
+     static String employe_id;
     @Test
     public void bgetEmployee() {
         // preparaing the request to get an employee
@@ -39,19 +36,19 @@ public class hardcodedexample {
         Assert.assertTrue(comapringempid);
         String firstname=response.jsonPath().getString("employee.emp_firstname");
         System.out.println(firstname);
-        Assert.assertTrue(firstname.contentEquals("kangro1"));
+        Assert.assertTrue(firstname.contentEquals("bug"));
     }
     @Test
     public void acreatEmployee() {
         RequestSpecification preparedrequest = RestAssured.given().header("Content-Type", "application/json").
                 header("Authorization", token).body("{\n" +
-                        "  \"emp_firstname\": \"kangro1\",\n" +
-                        "  \"emp_lastname\": \"kangro8\",\n" +
-                        "  \"emp_middle_name\": \"kangro67\",\n" +
-                        "  \"emp_gender\": \"M\",\n" +
+                        "  \"emp_firstname\": \"bug\",\n" +
+                        "  \"emp_lastname\": \"bag\",\n" +
+                        "  \"emp_middle_name\": \"beg\",\n" +
+                        "  \"emp_gender\": \"F\",\n" +
                         "  \"emp_birthday\": \"2020-02-20\",\n" +
                         "  \"emp_status\": \"unemployee\",\n" +
-                        "  \"emp_job_title\": \"maali\"\n" +
+                        "  \"emp_job_title\": \"big\"\n" +
                         "}");
         Response response = preparedrequest.when().post("/createEmployee.php");
         //this is used to print the response
@@ -66,7 +63,7 @@ public class hardcodedexample {
         // these assertion are coming  from hamcrest mathcers
         response.then().statusCode(201);
         // Assuming "response" is an object representing the HTTP response
-        response.then().body("Employee.emp_firstname", equalTo("kangro1"));
+        response.then().body("Employee.emp_firstname", equalTo("bug"));
         response.then().body("Message",equalTo("Employee Created"));
        response.then().header("Server",equalTo("Apache/2.4.39 (Win64) PHP/7.2.18"));
 
@@ -76,13 +73,13 @@ public class hardcodedexample {
         RequestSpecification preparedrequest=given().header("Authorization",token).
                 header("Content-Type", "application/json").body("{\n" +
                         "  \"employee_id\": \""+employe_id+"\",\n" +
-                        "  \"emp_firstname\": \"run2\",\n" +
-                        "  \"emp_lastname\": \"run3\",\n" +
-                        "  \"emp_middle_name\": \"run4\",\n" +
+                        "  \"emp_firstname\": \"fun\",\n" +
+                        "  \"emp_lastname\": \"fin\",\n" +
+                        "  \"emp_middle_name\": \"fan\",\n" +
                         "  \"emp_gender\": \"F\",\n" +
                         "  \"emp_birthday\": \"2000-10-22\",\n" +
-                        "  \"emp_status\": \"running\",\n" +
-                        "  \"emp_job_title\": \"prime Minister\"\n" +
+                        "  \"emp_status\": \"unknown\",\n" +
+                        "  \"emp_job_title\": \"free\"\n" +
                         "}");
         Response response=preparedrequest.when().put("/updateEmployee.php");
         response.prettyPrint();
@@ -90,7 +87,8 @@ public class hardcodedexample {
         response.then().statusCode(200);
 
     }
-    public void dgetUpdatedEmployee() {
+    @Test
+    public void dGetUpdatedEmployeeBack() {
         // preparaing the request to get an employee
         RequestSpecification preparedrequest = given().header("Content-Type", "application/json")
                 .header("Authorization", token)
@@ -101,7 +99,7 @@ public class hardcodedexample {
         response.prettyPrint();
         response.then().assertThat().statusCode(200);
         String firstname=response.jsonPath().getString("employee.emp_firstname");
-        Assert.assertTrue(firstname.contentEquals("kangro1"));
+        Assert.assertTrue(firstname.contentEquals("fun"));
         System.out.println(firstname);
     }
 }

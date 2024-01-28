@@ -10,7 +10,7 @@ import org.junit.runner.RunWith;
         // dry run command also print all cucumber steps in console.
 
         monochrome = true, //this command clear and clean the console
-        tags = "@javascriptclick",  // this command will run only smoke scenario not any other scenario.
+        tags = "@tableData",  // this command will run only smoke scenario not any other scenario.
         //tags = "@smoke or @regression"   you can use more than two tags to run scenario.
         plugin = {"pretty","html:target/cucumber.html","json:target/cucumber.json"}
 

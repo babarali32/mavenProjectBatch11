@@ -109,7 +109,7 @@ public class addEmployee extends commonMethods {
     }
 
     @When("user add multiple employees and verigy they added")
-    public void user_add_multiple_employees_and_verigy_they_added( DataTable dataTable) throws InterruptedException {
+    public void  user_add_multiple_employees_and_verigy_they_added(DataTable dataTable) throws InterruptedException {
         addNewEmployeepage addEmployee=new addNewEmployeepage();
 
         List<Map<String,String>> employeenames=dataTable.asMaps();

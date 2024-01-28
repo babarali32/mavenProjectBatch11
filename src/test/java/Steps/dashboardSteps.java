@@ -16,7 +16,7 @@ public class dashboardSteps extends commonMethods {
 
     @Then("verify all the dashboard tabs")
     public void verify_all_the_dashboard_tabs(DataTable dataTable) {
-       // dashboardpage dashboard=new dashboardpage();
+        dashboardpage dashboard=new dashboardpage();
 
         List<String> tabsfromfeaturefile=dataTable.asList();
 

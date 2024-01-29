@@ -1,5 +1,6 @@
 package API;
 import io.restassured.RestAssured;
+import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
 import org.junit.Assert;
@@ -10,10 +11,11 @@ import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.*;
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class hardcodedexample {
-    // this @test is annotation in junit to Run any method ,
     // storing the base uri
+    //This is a static variable in the RestAssured class
+    // that allows you to set the base URI for all your API requests in a test suite.
     String BaseURI = RestAssured.baseURI = "http://hrm.syntaxtechs.net/syntaxapi/api";
-    String token = "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3MDY0MzMwODAsImlzcyI6ImxvY2FsaG9zdCIsImV4cCI6MTcwNjQ3NjI4MCwidXNlcklkIjoiNjM5NSJ9.Of4hqkeLs0FAssVTAFzB6aCgOdiUtRS2HSFGWvNNjfI";
+    String token = "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3MDY1MzY5MTMsImlzcyI6ImxvY2FsaG9zdCIsImV4cCI6MTcwNjU4MDExMywidXNlcklkIjoiNjM5NSJ9.XKXMkcL0RnJUxhy33xRcZhEbZINdVYCzoPHur6Rj37Y";
      static String employe_id;
     @Test
     public void bgetEmployee() {
@@ -59,13 +61,13 @@ public class hardcodedexample {
         //we use a method jsonpath() to get specific information from json object
         employe_id = response.jsonPath().getString("Employee.employee_id");
         // STORE INSIDE A STRING
-        System.out.println(employe_id);
+       System.out.println(employe_id);
         // these assertion are coming  from hamcrest mathcers
         response.then().statusCode(201);
         // Assuming "response" is an object representing the HTTP response
         response.then().body("Employee.emp_firstname", equalTo("bug"));
         response.then().body("Message",equalTo("Employee Created"));
-       response.then().header("Server",equalTo("Apache/2.4.39 (Win64) PHP/7.2.18"));
+        response.then().header("Server",equalTo("Apache/2.4.39 (Win64) PHP/7.2.18"));
 
     }
     @Test
@@ -101,5 +103,32 @@ public class hardcodedexample {
         String firstname=response.jsonPath().getString("employee.emp_firstname");
         Assert.assertTrue(firstname.contentEquals("fun"));
         System.out.println(firstname);
+    }
+    @Test
+    public void eGetallEmployee(){
+        RequestSpecification preparedrequest=given().header("Authorization",token).header("Content-Type","application/json");
+        Response response=preparedrequest.when().get("/getAllEmployees.php");
+          String allEmployees=response.prettyPrint();
+
+          // creating the object of json path class for further operation
+        JsonPath js=new JsonPath(allEmployees);
+        // we can print any thing of our desired in console
+            int count=js.getInt("Employees.size()");
+            // print all number of employees
+        System.out.println(count);
+        // i just want to get employee id of all employees
+        for (int i=1; i<=count; i++){
+
+            String justIDs=js.getString("Employees["+ i +"].employee_id");
+            System.out.println(justIDs);
+
+        }
+
+
+
+
+
+
+
     }
 }

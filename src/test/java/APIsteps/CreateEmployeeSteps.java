@@ -33,6 +33,13 @@ public class CreateEmployeeSteps {
         System.out.println("Request Payload: " + APIpayloadBodyConstants.createEmployeePayload());
     }
 
+    @Given("a request is prepared for generating employee via json payload")
+    public void a_request_is_prepared_for_generating_employee_via_json_payload() {
+        request= RestAssured.given().header(APIconstants.HEADER_CONTENT_TYPE
+                ,APIconstants.CONTENT_TYPE).header(APIconstants.HEADER_AUTHORIZATION,generateTokenSteps.token).
+                body(APIpayloadBodyConstants.createEmployejsonBody());
+    }
+
     @When("a POST call is made to create an employee")
     public void a_post_call_is_made_to_create_an_employee() {
         response=request.when().post(APIconstants.CREATE_EMPLOYEE_URI);
@@ -102,6 +109,38 @@ public class CreateEmployeeSteps {
 
 
     }
+
+    @Given("a request is prepared for creating an employee with dynamic data firstname {string} middle name {string} lastname {string} gender {string} birthdate {string} empStatus {string} jobtitle {string}")
+    public void a_request_is_prepared_for_creating_an_employee_with_dynamic_data_firstname_middle_name_lastname_gender_birthdate_emp_status_jobtitle
+            (String emp_firstname, String emp_middle_name, String emp_lastname, String emp_gender, String emp_birthday, String emp_status, String emp_job_title) {
+               request= RestAssured.given().header(APIconstants.HEADER_CONTENT_TYPE
+                ,APIconstants.CONTENT_TYPE).header(APIconstants.HEADER_AUTHORIZATION,generateTokenSteps.token).
+                body(APIpayloadBodyConstants.payloadMoreDynamic(emp_firstname,emp_middle_name,emp_lastname,emp_gender,emp_birthday,emp_status,emp_job_title));
+        System.out.println(request);
+
+    }
+    @Given("a request is prepared to update the existing employee")
+    public void a_request_is_prepared_to_update_the_existing_employee() {
+        request= RestAssured.given().header(APIconstants.HEADER_CONTENT_TYPE
+                ,APIconstants.CONTENT_TYPE).header(APIconstants.HEADER_AUTHORIZATION,generateTokenSteps.token).
+                body(APIpayloadBodyConstants.updateCreatedEmployee());
+        System.out.println(request);
+
+    }
+    @When("a put call is made to update the employee")
+    public void a_put_call_is_made_to_update_the_employee() {
+               response =request.when().put(APIconstants.UPDATE_EMPLOYE_URI);
+               response.prettyPrint();
+
+    }
+
+    @Then("status code to updating an employee is {int}")
+    public void status_code_to_updating_an_employee_is(int status) {
+       response.then().assertThat().statusCode(status);
+       response.prettyPrint();
+    }
+
+
 
 
 

@@ -1,5 +1,4 @@
 package utils;
-
 import Steps.pageInitializer;
 import io.cucumber.java.ja.但し;
 import io.github.bonigarcia.wdm.WebDriverManager;
@@ -16,7 +15,7 @@ import java.io.File;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.concurrent.TimeUnit;
+//import java.util.concurrent.TimeUnit;
 
 public class commonMethods extends pageInitializer {
             public static WebDriver driver;
@@ -38,7 +37,7 @@ public class commonMethods extends pageInitializer {
                 }
                     driver.get(configReader.getvalue("url"));
                     driver.manage().window().maximize();
-                    driver.manage().timeouts().implicitlyWait(constants.IMPLICIT_WAIT, TimeUnit.SECONDS);
+                    //driver.manage().timeouts().implicitlyWait(constants.IMPLICIT_WAIT, TimeUnit.SECONDS);
                     initializerpageobjects();
                 }
                 public static void sendText(WebElement element, String texttosend){
